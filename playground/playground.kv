@@ -1,0 +1,15 @@
+#:kivy 1.7.2
+<Playground>:
+    orientation: "vertical"
+    noti_title: noti_title
+    noti_msg: noti_msg    
+    TextInput:
+        id: noti_title
+        text: "Put notification title here"
+    TextInput:
+        id: noti_msg
+        text: "Put notification message body here"
+    Button:
+        text: "Send notification"
+        on_press: root._do_notify(root.noti_title.text, root.noti_msg.text)
+
