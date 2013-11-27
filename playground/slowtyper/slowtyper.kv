@@ -1,6 +1,29 @@
 #:kivy 1.7.2
 <SlowTyper>:
     orientation: "vertical"
+    the_textbox: the_textbox
     the_label: the_label
+    BoxLayout:
+        height: start_button.height
+        orientation: "horizontal"
+        size_hint: 1, None
+        TextInput:
+            height: start_button.height
+            id: the_textbox
+            size_hint: 0.5, None
+            text: "Type whatever is in here."
+        Button:
+            id: start_button
+            height: self.texture_size[1] * 3
+            on_press: root._start_typing()
+            size_hint: 0.25, None
+            text: "Type It"
+        Button:
+            height: self.texture_size[1] * 3
+            on_press: root._abort_typing()
+            size_hint: 0.25, None
+            text: "Abort"
     Label:
         id: the_label
+        font_name: "TravelingTypewriter.ttf"
+        font_size: "36sp"
