@@ -10,7 +10,7 @@ package.name = playground
 package.domain = net.clusterbleep
 
 # (str) Source code where the main.py live
-source.dir = ./playground
+source.dir = ./playground/pastetest
 
 # (list) Source files to include (let empty to include all the files)
 #source.include_exts = py,png,jpg,kv,atlas
@@ -25,11 +25,11 @@ source.exclude_dirs = tests
 #source.exclude_patterns = license,images/*/*.jpg
 
 # (str) Application versionning (method 1)
-version.regex = __version__ = '(.*)'
-version.filename = %(source.dir)s/main.py
+#version.regex = __version__ = '(.*)'
+#version.filename = %(source.dir)s/main.py
 
 # (str) Application versionning (method 2)
-# version = 1.2.0
+version = 0.0.1
 
 # (list) Application requirements
 requirements = kivy
@@ -55,16 +55,16 @@ fullscreen = False
 #android.permissions = INTERNET
 
 # (int) Android API to use
-android.api = 14
+#android.api = 14
 
 # (int) Minimum API required (8 = Android 2.2 devices)
-android.minapi = 8
+#android.minapi = 8
 
 # (int) Android SDK version to use
-android.sdk = 21
+#android.sdk = 21
 
 # (str) Android NDK version to use
-android.ndk = 8e
+#android.ndk = 9
 
 # (str) Android NDK directory (if empty, it will be automatically downloaded.)
 #android.ndk_path =
@@ -77,7 +77,7 @@ android.ndk = 8e
 
 # (bool) Indicate whther to use private app file storage (True, default)
 # or SD card storage (False)
-android.private_storage = False
+#android.privatestorage = False
 
 # (str) Semicolon separated list of Java .jar files to add to the libs so
 # that pyjnius can access their classes. Don't add jars that you do not need,
@@ -97,7 +97,7 @@ android.private_storage = False
 #android.ouya.icon.filename = %(source.dir)s/data/ouya_icon.png
 
 # (bool) Indicate if the application needs the device to stay on
-wakelock = False
+#wakelock = False
 
 # (str) XML file to include as an intent filters in <activity> tag
 #android.manifest.intent_filters = 
