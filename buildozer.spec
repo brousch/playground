@@ -10,7 +10,7 @@ package.name = nfcp2pchat
 package.domain = com.example
  
 # (str) Source code where the main.py live
-source.dir = ./nfctest
+source.dir = ./playground/nfctest
  
 # (list) Source files to include (let empty to include all the files)
 source.include_exts = py,png,jpg,kv,atlas
