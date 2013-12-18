@@ -1,16 +1,16 @@
 [app]
 
 # (str) Title of your application
-title = My Kivy Playground
+title = Blackkron234
 
 # (str) Package name
-package.name = playground
+package.name = blackkron234
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = net.clusterbleep
+package.domain = com.example
 
 # (str) Source code where the main.py live
-source.dir = ./playground/pastetest
+source.dir = ./playground/blackkron234
 
 # (list) Source files to include (let empty to include all the files)
 #source.include_exts = py,png,jpg,kv,atlas
