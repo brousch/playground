@@ -7,10 +7,10 @@ title = NFC P2P Chat
 package.name = nfcp2pchat
  
 # (str) Package domain (needed for android/ios packaging)
-package.domain = com.meltingrocks
+package.domain = com.example
  
 # (str) Source code where the main.py live
-source.dir = .
+source.dir = ./playground/nfctest
  
 # (list) Source files to include (let empty to include all the files)
 source.include_exts = py,png,jpg,kv,atlas
