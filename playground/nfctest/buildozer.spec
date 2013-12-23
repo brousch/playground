@@ -75,6 +75,8 @@ android.permissions = NFC
  
 # (str) file to include as an intent filters in <activity> tag
 android.manifest.intent_filters = nfc_filter.xml
+
+android.private_storage = True
  
 #
 # iOS specific

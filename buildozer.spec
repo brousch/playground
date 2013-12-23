@@ -45,6 +45,8 @@ orientation = all
  
 # (bool) Indicate if the application should be fullscreen or not
 fullscreen = 1
+
+android.private_storage = True
  
  
 #
