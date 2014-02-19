@@ -32,17 +32,30 @@ class MyPaintApp(App):
                 def success(req, result):
                         Logger.info(result)
  
+                def redirect(req, result):
+                        Logger.info("Redirected")
+                        Logger.info(pprint.pformat(result))
+ 
                 def failure(req, result):
                         Logger.info("Failed")
+                        Logger.info(pprint.pformat(result))
+                
+                def error(req, result):
+                        Logger.info("Error")
                         Logger.info(pprint.pformat(result))
  
                 def clear_canvas(obj):
                         painter.canvas.clear()
                         Logger.info('Starting URL call.')
                         clearbtn.text = 'start!'
-                        req = UrlRequest('https://api.twitter.com/1/trends/1.json', success, success, failure)
+                        req = UrlRequest('https://api.twitter.com/1/trends/1.json',
+                                         on_success=success,
+                                         on_redirect=redirect,
+                                         on_failure=failure,
+                                         on_error=error,
+                                         debug=True)
  
-                clearbtn.bind(on_release=clear_canvas)
+                clearbtn.bind(on_press=clear_canvas)
  
                 return parent
  
