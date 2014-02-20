@@ -212,10 +212,20 @@ else:
             self._popup = None
 
 
+
 class PictureImporterApp(App):
     def build(self):
         root = PictureImporter()
         return root
+    
+    def play(self, name):
+        pass
+    
+    def on_pause(self):
+        return True
+    
+    def on_resume(self):
+        pass
 
 
 if __name__ == '__main__':
