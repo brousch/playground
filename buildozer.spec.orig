@@ -1,16 +1,16 @@
 [app]
  
 # (str) Title of your application
-title = Tshirtman Py4A Bug 64 Test
+title = Kivy Pong
  
 # (str) Package name
-package.name = bug64
+package.name = kivypong
  
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.test
  
 # (str) Source code where the main.py live
-source.dir = ./playground/tshirtman/py4abug64test
+source.dir = ./playground/pongtutorial
  
 # (list) Source files to include (let empty to include all the files)
 source.include_exts = py,png,jpg,kv,atlas
@@ -46,7 +46,7 @@ orientation = all
 # (bool) Indicate if the application should be fullscreen or not
 fullscreen = 1
 
-#android.private_storage = False
+android.private_storage = False
  
  
 #
