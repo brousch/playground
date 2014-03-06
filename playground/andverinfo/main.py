@@ -2,15 +2,28 @@ from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.label import Label
+from kivy.utils import platform
 
-from jnius import autoclass
 
-
-BuildVersion = autoclass('android.os.Build$VERSION')
+if platform == "android":
+    from jnius import autoclass
+    BuildVersion = autoclass('android.os.Build$VERSION')
+else:
+    class BV():
+        def __init__(self, codename, incremental, release, sdk, sdk_int):
+            self.CODENAME = codename
+            self.INCREMENTAL = incremental
+            self.RELEASE = release
+            self.SDK = sdk
+            self.SDK_INT = sdk_int
+    BuildVersion = BV("Stub", "Wat", "Maybe", "Nope", 0)
 
 
 kv = """
 <Test>:
+    orientation: 'vertical'
+    Label:
+        text: "Android Version Info"
 """
 
 Builder.load_string(kv)
