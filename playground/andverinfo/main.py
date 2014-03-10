@@ -10,9 +10,10 @@ if platform == "android":
     BuildVersion = autoclass('android.os.Build$VERSION')
     
     PythonActivity = autoclass('org.renpy.android.PythonActivity')
-    Secure = autoclass('android.provider.Settings.Secure')
-    ANDROID_ID = Secure.getString(PythonActivity.mActivity.getContentResolver(),
-                                  Secure.ANDROID_ID)
+    activity = PythonActivity.mActivity
+    Settings = autoclass('android.provider.Settings')
+    ANDROID_ID = Settings.Secure.getString(activity.getContentResolver(),
+                                           Settings.Secure.ANDROID_ID)
 else:
     class BV():
         def __init__(self, codename, incremental, release, sdk, sdk_int):
