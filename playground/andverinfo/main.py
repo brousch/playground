@@ -11,9 +11,9 @@ if platform == "android":
     
     PythonActivity = autoclass('org.renpy.android.PythonActivity')
     activity = PythonActivity.mActivity
-    Settings = autoclass('android.provider.Settings')
-    ANDROID_ID = Settings.Secure.getString(activity.getContentResolver(),
-                                           Settings.Secure.ANDROID_ID)
+    SettingsSecure = autoclass('android.provider.Settings$Secure')
+    ANDROID_ID = SettingsSecure.getString(activity.getContentResolver(),
+                                           SettingsSecure.ANDROID_ID)
 else:
     class BV():
         def __init__(self, codename, incremental, release, sdk, sdk_int):
