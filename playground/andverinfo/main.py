@@ -8,7 +8,11 @@ from kivy.utils import platform
 if platform == "android":
     from jnius import autoclass
     BuildVersion = autoclass('android.os.Build$VERSION')
+    
+    PythonActivity = autoclass('org.renpy.android.PythonActivity')
     Secure = autoclass('android.provider.Settings.Secure')
+    ANDROID_ID = Secure.getString(PythonActivity.mActivity.getContentResolver(),
+                                  Secure.ANDROID_ID)
 else:
     class BV():
         def __init__(self, codename, incremental, release, sdk, sdk_int):
@@ -17,13 +21,11 @@ else:
             self.RELEASE = release
             self.SDK = sdk
             self.SDK_INT = sdk_int
-
-    class Sec():
-        def __init__(self, android_id):
-            self.ANDROID_ID = android_id
-
     BuildVersion = BV("Stub", "Wat", "Maybe", "Nope", 0)
-    Secure = Sec('Fake ID')
+
+    ANDROID_ID = "Fake ID"
+
+
 
 
 kv = """
@@ -44,7 +46,7 @@ class Test(BoxLayout):
         self.append_widget("RELEASE", BuildVersion.RELEASE)
         self.append_widget("SDK", BuildVersion.SDK)
         self.append_widget("SDK_INT", BuildVersion.SDK_INT)
-        self.append_widget("ANDROID_ID", Secure.ANDROID_ID)
+        self.append_widget("ANDROID_ID", ANDROID_ID)
 
     def append_widget(self, heading, text):
         self.add_widget(Label(text="{}: {}".format(heading, text)))
