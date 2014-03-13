@@ -1,3 +1,4 @@
+# File name: main.py
 import kivy
 kivy.require('1.7.0')
 
@@ -6,7 +7,7 @@ from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager
 from kivy.uix.widget import Widget
 
-#Builder.load_file('main.kv')
+kv = Builder.load_file('main.kv')
 
 class TopWidget(Widget):
     pass
@@ -20,9 +21,9 @@ class BottomWidget(Widget):
 class MainScreenManager(ScreenManager):
     pass
 
-class MainApp(App):
+class MainScreenManagerApp(App):
     def build(self):
         return MainScreenManager()
 
 if __name__=="__main__":
-    MainApp().run()
+    MainScreenManagerApp().run()

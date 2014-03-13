@@ -4,37 +4,22 @@
     color: .8,.9,0,1
     font_size: 32
 
-<TopWidget>:
-    BoxLayout:
-        size: root.size
-        pos: root.pos
-        orientation: 'vertical'
-        MyButton:
-            text: "TopBtn"
-<MiddleWidget>:
-    BoxLayout:
-        size: root.width, _my_button.height
-        pos: root.pos
-        orientation: 'vertical'
-        MyButton:
-            id: _my_button
-            height: 50
-            text: "MiddleBtn"
-<BottomWidget>:
-    BoxLayout:
-        size: root.size
-        pos: root.pos
-        orientation: 'vertical'
-        MyButton:
-            text: "BottomBtn"
-<Main@Screen>:
-    BoxLayout:
-        size: root.size
-        pos: root.pos
-        orientation: 'vertical'
-        TopWidget:
-            id: _top_widget
-        MiddleWidget:
-            id: _middle_widget
-        BottomWidget:
-            id: _bottom_widget
+<MainScreenManager>:
+    Screen:
+        BoxLayout:
+            size: root.size
+            pos: root.pos
+            orientation: 'vertical'
+            MyButton:
+                text: "TopBtn"
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                height: 50
+                MyButton:
+                    id: button
+                    sizehint_y: None
+                    height: 50
+                    text: "MiddleBtn"
+            MyButton:
+                text: "BottomBtn"
