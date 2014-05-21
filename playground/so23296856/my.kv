@@ -1,0 +1,19 @@
+<BigCircle>
+    canvas:
+        Color:
+            rgb: 1, 1, 0
+        Ellipse:
+            size: min(self.size), min(self.size)
+            pos: root.center_x - min(self.size)/2, root.center_y - min(self.size)/2
+
+<MainScreen>:
+    FloatLayout
+        size: root.size
+        canvas:
+            Color:
+                rgb: 1, 1, 1
+            Rectangle:
+                size: self.size
+
+        BigCircle:
+            id: big_cir
